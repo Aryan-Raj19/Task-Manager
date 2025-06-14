@@ -1,0 +1,28 @@
+@media screen and (max-width: 700px) {
+  .task-form {
+    margin-right: 100px;
+  }
+  .input-field {
+    width: 90%;
+  }
+  .submit-btn {
+    font-size: 12px;
+    width: 15%;
+    padding: 4px 8px;
+  }
+  .title-input {
+    width: 72%;
+  }
+  .task-details {
+    width: 70%;
+  }
+  .task-item {
+    width: 92%;
+  }
+}
+
+@media screen and (min-width: 701px) {
+  .task-details {
+    width: 80%;
+  }
+}

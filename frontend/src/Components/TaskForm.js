@@ -1,27 +1,38 @@
-import React from 'react';
+import "../Styles/TaskForm.css";
+import "../Styles/Responsive.css"
 
-const TaskForm = ({ name, description, onNameChange, onDescriptionChange, onSubmit, isEditing }) => {
+const TaskForm = ({
+  name,
+  description,
+  onNameChange,
+  onDescriptionChange,
+  onSubmit,
+  isEditing,
+}) => {
   return (
-    <form onSubmit={onSubmit} style={{ marginBottom: '20px' }}>
-      <h2>Add New Task</h2>
+    <form className="task-form" onSubmit={onSubmit}>
+      <h1>Add New Task</h1>
+      <div className="task-input">
+        <input
+          className="title-input input-field"
+          type="text"
+          placeholder="Task Name"
+          value={name}
+          onChange={onNameChange}
+          required
+          style={{}}
+        />
+        <button className="submit-btn" type="submit">
+          {isEditing ? "Update Task" : "Add Task"}
+        </button>
+      </div>
       <input
-        type="text"
-        placeholder="Task Name"
-        value={name}
-        onChange={onNameChange}
-        required
-        style={{ width: '70%', padding: '10px', marginBottom: '10px', display: 'block' }}
-      />
-      <input
+        className="desc-input input-field"
         type="text"
         placeholder="Description"
         value={description}
         onChange={onDescriptionChange}
-        style={{ width: '70%', padding: '10px', marginBottom: '10px', display: 'block' }}
       />
-      <button type="submit" style={{ padding: '10px 20px', backgroundColor: '#2563eb', color: 'white', border: 'none' }}>
-        {isEditing ? 'Update Task' : 'Add Task'}
-      </button>
     </form>
   );
 };

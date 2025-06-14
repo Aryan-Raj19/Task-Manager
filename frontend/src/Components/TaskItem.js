@@ -1,12 +1,21 @@
-import React from 'react';
+import "../Styles/TaskItem.css";
+import "../Styles/Responsive.css";
 
 const TaskItem = ({ task, onEdit, onDelete }) => {
   return (
-    <div style={{ marginBottom: '15px', borderBottom: '1px solid #eee', paddingBottom: '10px' }}>
-      <strong>{task.name}</strong>
-      <p>{task.description}</p>
-      <button onClick={() => onEdit(task)} style={{ marginRight: '10px', padding: '5px 10px' }}>Edit</button>
-      <button onClick={() => onDelete(task.id)} style={{ padding: '5px 10px', color: 'white', backgroundColor: 'red', border: 'none' }}>Delete</button>
+    <div className="task-item">
+      <div className="task-details">
+        <strong>{task.name}</strong>
+        <p className="task-desc">{task.description}</p>
+      </div>
+      <div className="buttons">
+        <button className="btn edit-btn" onClick={() => onEdit(task)}>
+          Edit
+        </button>
+        <button className="btn delete-btn" onClick={() => onDelete(task.id)}>
+          Delete
+        </button>
+      </div>
     </div>
   );
 };
